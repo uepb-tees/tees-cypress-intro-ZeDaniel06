@@ -1,0 +1,27 @@
+{
+  "name": "cypress-demo-1",
+  "version": "0.0.1",
+  "description": "Cypress Demo - Topicos Especiais Eng de Software 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "keywords": [
+    "cypress",
+    "rodrigo",
+    "uepb",
+    "tees"
+  ],
+  "author": "rodrigo alves costa",
+  "license": "MIT",
+  "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^12.17.4"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.4"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+}
