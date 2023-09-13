@@ -7,6 +7,7 @@ const createEsbuildPlugin =
     require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
 
 module.exports = defineConfig({
+    projectId: "jy32cz",
     e2e: {
         async setupNodeEvents(on, config) {
             const bundler = createBundler({
