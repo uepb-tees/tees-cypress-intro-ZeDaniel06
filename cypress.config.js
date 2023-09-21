@@ -9,6 +9,7 @@ const createEsbuildPlugin =
 module.exports = defineConfig({
     projectId: "jy32cz",
     e2e: {
+        chromeWebSecurity: false,
         async setupNodeEvents(on, config) {
             const bundler = createBundler({
                 plugins: [createEsbuildPlugin(config)],
