@@ -35,7 +35,9 @@ jobs:
           # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
           record: true
           parallel: true # Runs test in parallel using settings above
-          env: BASE_URL=${{ secrets.BASE_URL }}
+          env:
+            BASE_URL=${{ secrets.BASE_URL }}
+            SAUCE_DEMO_URL=${{ secrets.SAUCE_DEMO_URL }}
         env:
           # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
           # in GitHub repo → Settings → Secrets → Actions
