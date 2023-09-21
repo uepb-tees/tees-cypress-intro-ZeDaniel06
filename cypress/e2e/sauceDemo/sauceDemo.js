@@ -1,6 +1,7 @@
 import {Given, When, Then} from "@badeball/cypress-cucumber-preprocessor";
 Given("eu entro no site",()=>{
-    cy.visit('https://www.saucedemo.com/');
+    const url = Cypress.env('SAUCE_DEMO_URL');
+    cy.visit(url);
 })
 When("eu escrevo {string} no Username",(login)=>{
     cy.get('[data-test="username"]').type(login);
