@@ -8,6 +8,7 @@ When("eu escrevo {string} no Username",(login)=>{
 When("eu escrevo {string} no Password e dou enter",(senha)=>{
     cy.get('[data-test="password"]').type(`${senha}{enter}`);
 })
+
 Then("deve ser visto {string} na tela",(texto)=>{
     cy.get('body').should('contain',texto);
 })
