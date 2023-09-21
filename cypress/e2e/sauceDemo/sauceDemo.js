@@ -11,7 +11,3 @@ When("eu escrevo {string} no Password e dou enter",(senha)=>{
 Then("deve ser visto {string} na tela",(palavra)=>{
     cy.contains(palavra);
 })
-/*
-        And eu escrevo "senhateste" no Password
-        And aperto enter
-        Then deve ser visto "sadface" na tela */
