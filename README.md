@@ -1,7 +1,8 @@
 # cypress-demo-1
 Cypress Demo - Topicos Especiais Eng de Software 1
 Algumas anotações sobre docker abaixo:
-`docker pull nome-da-imagem` salva uma imagem do registro do docker no sistema
+`docker pull nome-da-imagem:tag` salva uma imagem do registro do docker no sistema, tag é a versão, se tirar o `:tag` ele automaticamente pega a latest
+
 `docker images` lista as imagens já salvas
 `docker run nome-da-imagem` roda o contêiner baseado nesta imagem
 `docker run nome-da-imagem echo "something"` roda o contêiner e passa um comando de mensagem
@@ -14,3 +15,5 @@ Algumas anotações sobre docker abaixo:
 `docker run -d -P --name static-site prakhar1989/static-site` o -d libera o terminal para não ficar preso à execução do conteiner, -P publica as portas expostas em portas aleatórias, e o --name nomeia o conteiner
 `docker port nome-dado` mostra as portas em que o conteiner esta rodando
 `docker stop id-do-conteiner OU nome-definido` para parar o conteiner desanexado
+`docker build -t nome-de-usuario-no-docker-hub/nome-aplicacao .` constrói imagem a partir de um dockerfile presente na mesma pasta
+`docker run -p 8888:5000 user/app` roda internamente na porta 5000 e externamente na 8888
