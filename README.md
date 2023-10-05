@@ -17,3 +17,4 @@ Algumas anotações sobre docker abaixo:
 `docker stop id-do-conteiner OU nome-definido` para parar o conteiner desanexado
 `docker build -t nome-de-usuario-no-docker-hub/nome-aplicacao .` constrói imagem a partir de um dockerfile presente na mesma pasta
 `docker run -p 8888:5000 user/app` roda internamente na porta 5000 e externamente na 8888
+`docker start idContainer` roda container que esteja listado no `docker ps -a`
