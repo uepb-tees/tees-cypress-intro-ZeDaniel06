@@ -6,8 +6,8 @@ on:
   pull_request:
     branches:
       - main
-  schedule:
-    - cron: "30 7,19 * * *"
+  #schedule:
+   # - cron: "30 7,19 * * *"
   workflow_dispatch:
 
 jobs:
