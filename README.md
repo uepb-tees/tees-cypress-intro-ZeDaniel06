@@ -62,3 +62,30 @@ Modelo e comentários de um Dockerfile:
 
 FROM nginx:latest (imagem base)
 RUN echo '<h1>Hello World !</h1>' > /usr/share/nginx/html/index.html (este comando insere o conteúdo do echo dentro do arquivo html indicado após o sinal >)
+
+Outra Dockerfile:
+
+FROM debian (imagem base)
+LABEL maintainer 'Aluno Cod3r <aluno at cod3r.com.br>'
+
+ARG S3_BUCKET=files (argumento S3_BUCKET recebendo como padrão files, se não for especificado no build)
+ENV S3_BUCKET=${S3_BUCKET} (atribuindo S3_BUCKET a variável de ambiente)
+
+COMANDO PARA RODAR:
+`docker container run ex-build-arg bash -c 'echo $S3_BUCKET'`
+(bash indica interação com o terminal bash do debian, o -c indica que após ele terá entre aspas simples um comando a ser executado no bash).
+
+PARA DAR BUILD ESPECIFICANDO O ARGUMENTO CRIADO:
+`docker image build --build-arg S3_BUCKET=myapp -t ex-build-arg .`
+
+INSPECT COM FILTRO:
+`docker image inspect --format="{{index .Config.Labels \"maintainer\"}}" ex-build-arg`: vai exibir apenas o label maintainer, que foi especificado no Dockerfile.
+
+Dockerfile usando copy e criando arquivo dentro do container:
+
+FROM nginx:latest
+LABEL maintainer 'Ze Daniel <site ou email'
+
+RUN echo '<h1>Sem conteudo</h1>' > /usr/share/nginx/html/conteudo.html
+COPY *.html /usr/share/nginx/html/
+Obs: nginx roda na porta 80 no container
